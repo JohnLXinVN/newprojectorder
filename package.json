@@ -1,5 +1,5 @@
 {
-    "name": "tiktok-ui",
+    "name": "order",
     "version": "0.1.0",
     "private": true,
     "dependencies": {
@@ -20,14 +20,15 @@
         "react-icons": "^4.4.0",
         "react-router-dom": "^6.3.0",
         "react-scripts": "5.0.1",
+        "swiper": "^8.4.4",
         "web-vitals": "^2.1.4"
     },
     "devDependencies": {
         "babel-plugin-module-resolver": "^4.1.0",
         "customize-cra": "^1.0.0",
+        "prettier": "2.7.1",
         "react-app-rewired": "^2.2.1",
         "sass": "^1.51.0",
-        "prettier": "2.7.1",
         "tailwindcss": "^3.1.8"
     },
     "scripts": {

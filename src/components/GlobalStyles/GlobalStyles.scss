@@ -2,7 +2,7 @@
 
 :root {
     --font-family: 'APK-Protocol', sans-serif;
-    --text-color: #151719;
+    --text-color: #555;
     --white-color: #fff;
     --black-color: #000;
     --primary-color: #02b7b0;
@@ -10,6 +10,8 @@
     --gutter: 24px;
     --container-width: 1240px;
     --top-bar-height: 40px;
+    --bottom-bar-height: 120px;
+    --header-height: calc(var(--top-bar-height)+var(--bottom-bar-height));
 }
 
 * {

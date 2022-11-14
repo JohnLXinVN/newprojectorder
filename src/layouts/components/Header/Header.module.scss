@@ -1,3 +1,9 @@
+.wrapper {
+    position: fixed;
+    width: 100%;
+    top: 0;
+}
+
 .top-bar {
     $--search-top-spacer: 8px;
 
@@ -92,6 +98,109 @@
                 right: 18px;
                 top: -23px;
             }
+        }
+    }
+}
+
+.bottom-bar {
+    height: 120px;
+    width: 100%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+    .inner-header {
+        width: 100%;
+        text-align: center;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .menu-item {
+        font-size: 1.6rem;
+        font-weight: 700;
+        color: var(--text-color);
+        cursor: pointer;
+        transition: all 0.3s linear;
+
+        &:hover {
+            color: var(--primary-color);
+        }
+    }
+
+    .wrap-menu-children {
+        position: relative;
+
+        &:hover {
+            .icon-arrow {
+                transform: rotate(180deg);
+            }
+
+            .wrap-popper {
+                display: block;
+                opacity: 1;
+                transition: all 0.2s ease-in-out;
+                color: var(--text-color);
+            }
+        }
+
+        .wrap-popper {
+            position: absolute;
+            left: 11px;
+            top: 56px;
+            display: none;
+            opacity: 0;
+
+            .list-item {
+                list-style: none;
+            }
+        }
+    }
+
+    .icon-arrow {
+        margin-left: 4px;
+        transition: all 0.3s linear;
+    }
+
+    .item {
+        padding: 24px 24px;
+    }
+
+    .logo {
+        margin: 0 12px;
+    }
+
+    .item-child {
+        font-size: 1.4rem;
+        font-weight: 400;
+        padding: 6px 12px;
+        float: left;
+
+        &:hover {
+            color: var(--primary-color);
+        }
+    }
+
+    .cart {
+        margin-left: 50px;
+        position: relative;
+
+        .icon-cart {
+            font-size: 2.4rem;
+        }
+
+        .amount {
+            position: absolute;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            border-radius: 50px;
+            background-color: var(--primary-color);
+            color: var(--white-color);
+            top: 3px;
+            right: 0;
         }
     }
 }
