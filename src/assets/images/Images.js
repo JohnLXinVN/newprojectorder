@@ -9,6 +9,8 @@ const Images = {
     homeImg7: require('~/assets/images/Homeimg/homeimg7.webp'),
     homeImg8: require('~/assets/images/Homeimg/homeimg8.webp'),
     homeImg9: require('~/assets/images/Homeimg/homeimg9.webp'),
+    imgPayment: require('~/assets/images/Homeimg/payment.webp'),
+
     PopularProduct1: require('~/assets/images/Popularproduct/kemduacondao.webp'),
     PopularProduct2: require('~/assets/images/Popularproduct/kemduamatcha.webp'),
     PopularProduct3: require('~/assets/images/Popularproduct/kemduaxoila.webp'),

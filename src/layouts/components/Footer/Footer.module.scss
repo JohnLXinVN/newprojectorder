@@ -10,3 +10,144 @@
         border-top: 1px solid #ccc;
     }
 }
+
+.footer-top {
+    background-color: var(--background-color-footer-top);
+    padding: 15px 0 10px 0;
+
+    .wrap-contact {
+        display: flex;
+
+        h5 {
+            font-size: 3rem;
+            font-weight: 600;
+            color: var(--white-color);
+            margin-right: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .form-email {
+            margin-left: 100px;
+            width: 360px;
+            position: relative;
+            margin-bottom: 0;
+            float: left;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .input {
+                border: 1px solid #e1e1e1;
+                width: 100%;
+                max-width: 100%;
+                display: block;
+                color: #1c1c1c;
+                min-height: 45px;
+                padding: 0 20px;
+            }
+
+            button {
+                position: absolute;
+                right: 0;
+                height: 100%;
+                padding: 0 24px;
+                background-color: var(--primary-color);
+                color: var(--white-color);
+                font-size: 2rem;
+                font-weight: 500;
+                cursor: pointer;
+
+                &:hover {
+                    background: #02d0c8;
+                }
+            }
+        }
+    }
+
+    .social-items {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        list-style: none;
+        height: 100%;
+
+        .icon {
+            margin: 0 12px;
+            height: 100%;
+            align-items: center;
+            display: flex;
+            justify-content: center;
+
+            :hover {
+                cursor: pointer;
+                color: var(--primary-color);
+            }
+        }
+    }
+}
+
+.site-bottom {
+    padding: 40px 0;
+    font-size: 1.8rem;
+
+    .header {
+        font-size: 1.8rem;
+        font-weight: 500;
+        padding: 14px 0;
+        text-transform: uppercase;
+    }
+
+    .item {
+        padding: 4px 0;
+        color: var(--footer-text-color);
+
+        .icon {
+            margin-right: 6px;
+        }
+
+        &:hover {
+            cursor: pointer;
+            color: var(--primary-color);
+        }
+    }
+
+    .contact {
+        .item-menu {
+            display: flex;
+            color: var(--footer-text-color);
+            margin-top: 14px;
+
+            .icon {
+                margin-right: 12px;
+            }
+
+            .phone-number {
+                color: var(--footer-text-color);
+
+                &:hover {
+                    color: var(--primary-color);
+                }
+            }
+        }
+    }
+}
+
+.footer-bottom {
+    padding: 18px 0;
+    border-top: 1px solid #ccc;
+    align-items: center;
+
+    .text {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        height: 100%;
+
+        b {
+            margin: 0 2px;
+        }
+    }
+}
