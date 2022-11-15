@@ -1,0 +1,12 @@
+.selection-brand {
+    margin: 46px 0;
+
+    .wrap-brand {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        border-top: 1px solid #ccc;
+    }
+}

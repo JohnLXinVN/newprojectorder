@@ -2,6 +2,7 @@
     position: fixed;
     width: 100%;
     top: 0;
+    z-index: 1000;
 }
 
 .top-bar {
@@ -103,7 +104,8 @@
 }
 
 .bottom-bar {
-    height: 120px;
+    background-color: var(--white-color);
+    height: var(--bottom-bar-height);
     width: 100%;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
@@ -171,6 +173,9 @@
     }
 
     .item-child {
+        width: 100%;
+        display: flex;
+        justify-content: flex-start;
         font-size: 1.4rem;
         font-weight: 400;
         padding: 6px 12px;
