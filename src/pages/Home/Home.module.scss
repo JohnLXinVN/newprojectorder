@@ -131,7 +131,7 @@
             &::before {
                 position: absolute;
                 content: '';
-                border-top: 15px solid #e9fdf3;
+                border-top: 15px solid var(--border-color);
                 border-right: 15px solid transparent;
                 bottom: -15px;
                 right: 0px;
@@ -139,7 +139,7 @@
         }
 
         .list-category {
-            border-right: 1px solid #ccc;
+            border-right: 1px solid var(--border-color);
             padding: 16px 4px;
 
             .item {

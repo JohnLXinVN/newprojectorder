@@ -115,13 +115,23 @@ function Header() {
             <div className={cx('bottom-bar')}>
                 <div className="container">
                     <div className={cx('inner-header')}>
-                        <div className={cx('menu-item', 'item')}>Introduce</div>
-                        <div className={cx('menu-item', 'item', 'wrap-menu-children')}>
-                            Menu
-                            <FontAwesomeIcon
-                                className={cx('icon-arrow')}
-                                icon={faChevronDown}
-                            />
+                        <Link
+                            className={cx('menu-item', 'item')}
+                            to={config.routes.introduce}
+                        >
+                            Introduce
+                        </Link>
+                        <div className={cx('item', 'menu-item', 'wrap-menu-children')}>
+                            <Link
+                                to={config.routes.promoteproduct}
+                                className={cx('link-menu')}
+                            >
+                                Menu
+                                <FontAwesomeIcon
+                                    className={cx('icon-arrow')}
+                                    icon={faChevronDown}
+                                />
+                            </Link>
                             <PopperWrapper className={cx('wrap-popper')}>
                                 <ul className={cx('list-item')}>
                                     <li className={cx('item-child')}>Outstanding</li>
