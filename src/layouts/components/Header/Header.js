@@ -134,33 +134,56 @@ function Header() {
                             </Link>
                             <PopperWrapper className={cx('wrap-popper')}>
                                 <ul className={cx('list-item')}>
-                                    <li className={cx('item-child')}>Outstanding</li>
-                                    <li className={cx('item-child')}>Coconut Cream</li>
-                                    <li className={cx('item-child')}>Drinks</li>
-                                    <li className={cx('item-child')}>Ice cream cup</li>
-                                    <li className={cx('item-child')}>Topping</li>
+                                    <Link
+                                        className={cx('item-child')}
+                                        to={config.routes.outstanding}
+                                    >
+                                        Outstanding
+                                    </Link>
+                                    <Link
+                                        className={cx('item-child')}
+                                        to={config.routes.coconutCream}
+                                    >
+                                        Coconut Cream
+                                    </Link>
+                                    <Link
+                                        className={cx('item-child')}
+                                        to={config.routes.drinks}
+                                    >
+                                        Drinks
+                                    </Link>
+                                    <Link
+                                        className={cx('item-child')}
+                                        to={config.routes.iceCreamCup}
+                                    >
+                                        Ice cream cup
+                                    </Link>
+                                    <Link
+                                        className={cx('item-child')}
+                                        to={config.routes.topping}
+                                    >
+                                        Topping
+                                    </Link>
                                 </ul>
                             </PopperWrapper>
                         </div>
-                        <div className={cx('menu-item', 'item')}>Franchise</div>
-                        <div className={cx('menu-item', 'logo')}>
+
+                        <Link className={cx('menu-item', 'logo')} to={config.routes.home}>
                             <img src={images.logo} alt="logo" />
-                        </div>
-                        <div className={cx('menu-item', 'item')}>System</div>
-                        <div className={cx('menu-item', 'item', 'wrap-menu-children')}>
-                            News
-                            <FontAwesomeIcon
-                                className={cx('icon-arrow')}
-                                icon={faChevronDown}
-                            />
-                            <PopperWrapper className={cx('wrap-popper')}>
-                                <ul className={cx('list-item')}>
-                                    <li className={cx('item-child')}>Newspapers</li>
-                                    <li className={cx('item-child')}>Brand story</li>
-                                </ul>
-                            </PopperWrapper>
-                        </div>
-                        <div className={cx('menu-item', 'item')}>Contact</div>
+                        </Link>
+                        <Link
+                            className={cx('menu-item', 'item')}
+                            to={config.routes.system}
+                        >
+                            System
+                        </Link>
+
+                        <Link
+                            className={cx('menu-item', 'item')}
+                            to={config.routes.contact}
+                        >
+                            Contact
+                        </Link>
                         <div className={cx('cart', 'item')}>
                             <FontAwesomeIcon
                                 className={cx('icon-cart')}

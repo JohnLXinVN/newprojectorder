@@ -1,28 +1,27 @@
 import classNames from 'classnames/bind';
-import { Link } from 'react-router-dom';
-import config from '~/config';
+import { useEffect } from 'react';
+import Direction from '~/components/Direction';
 
 import styles from './Introduce.module.scss';
 
 const cx = classNames.bind(styles);
 
 function Introduce() {
+    const scrollToTop = () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth',
+            /* you can also use 'auto' behaviour
+             in place of 'smooth' */
+        });
+    };
+
+    useEffect(() => {
+        scrollToTop();
+    }, []);
     return (
         <div className={cx('wrapper')}>
-            <div className={cx('direction')}>
-                <div className="container">
-                    <div className="row">
-                        <div className="col-12">
-                            <div className={cx('wrap')}>
-                                <Link className={cx('link-home')} to={config.routes.home}>
-                                    Home
-                                </Link>{' '}
-                                | <span>Introduce</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <Direction title="Introduce" />
             <div className={cx('page')}>
                 <div className="container">
                     <div className={cx('header-page')}>
@@ -207,11 +206,10 @@ function Introduce() {
                             </li>
                         </ul>
                         <div className={cx('link-face')}>
-                            <strong>Fanpage:&nbsp;</strong>
+                            <strong>Fanpage</strong>
                             <a
                                 href="https://www.facebook.com/kemduacondao.cocoo/"
                                 rel="nofollow"
-                                target="_blank"
                             >
                                 https://fb.com/kemduacondao.cocoo/
                             </a>

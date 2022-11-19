@@ -1,0 +1,93 @@
+.App {
+    position: relative;
+
+    .social {
+        margin-bottom: 42px;
+        display: inline-block;
+        position: fixed;
+        bottom: 80px;
+        left: 32px;
+        z-index: 1000;
+
+        .item {
+            cursor: pointer;
+            display: block;
+            margin-bottom: 12px;
+        }
+    }
+
+    .link-phone {
+        position: fixed;
+        bottom: 32px;
+        left: 32px;
+        z-index: 1000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        background-color: red;
+        padding: 8px 12px;
+        font-size: 2.2rem;
+        border-radius: 25px;
+
+        .wrap-icon-phone {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .icon {
+                color: #b70100;
+                font-size: 1.6rem;
+                background: #fff;
+                width: 15px;
+                height: 15px;
+                line-height: 30px;
+                border-radius: 20px;
+                margin-right: 5px;
+                text-align: center;
+                padding: 8px;
+            }
+        }
+
+        .phone-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white-color);
+            animation: changeTextColor 0.5s linear infinite;
+        }
+    }
+
+    .item-fixed-right {
+        position: fixed;
+        bottom: 46px;
+        right: 46px;
+        height: 46px;
+        background-color: #007ab9;
+        padding: 12px 16px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 10px;
+        cursor: pointer;
+
+        .icon {
+            color: var(--white-color);
+            font-size: 2rem;
+        }
+    }
+}
+
+@keyframes changeTextColor {
+    0% {
+        color: var(--white-color);
+    }
+    50% {
+        color: #efe6ae;
+    }
+    100% {
+        color: #ffdc02;
+    }
+}

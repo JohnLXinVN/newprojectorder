@@ -1,0 +1,36 @@
+.header-page {
+    padding: 28px 0 0 0;
+    border-bottom: 2px thin var(--border-color);
+
+    &:hover {
+        color: var(--primary-color);
+        cursor: pointer;
+    }
+}
+
+.content {
+    line-height: 1;
+    font-size: 1.4rem;
+    font-weight: 400;
+
+    .des {
+        margin-top: 24px;
+        line-height: 1;
+        font-size: 2rem;
+        font-weight: 400;
+    }
+    .header-list {
+        margin: 64px 0 24px 24px;
+        line-height: 1;
+        font-size: 2rem;
+        font-weight: 400;
+    }
+
+    .list-location h2 {
+        line-height: 1;
+        font-size: 1.8rem;
+        font-weight: 400;
+        margin-left: 12px;
+        padding: 12px 0;
+    }
+}

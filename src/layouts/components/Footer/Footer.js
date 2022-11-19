@@ -17,6 +17,7 @@ import {
     faLocationPin,
     faPhone,
 } from '@fortawesome/free-solid-svg-icons';
+import Button from '~/components/Button';
 
 const cx = classNames.bind(styles);
 
@@ -59,7 +60,9 @@ function Footer() {
                                         id="email"
                                         placeholder="Input your email"
                                     />
-                                    <button>Send now</button>
+                                    <Button primary type="submit">
+                                        Send now
+                                    </Button>
                                 </form>
                             </div>
                         </div>

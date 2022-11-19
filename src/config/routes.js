@@ -4,6 +4,13 @@ const routes = {
     login: '/account/login',
     introduce: '/introduce',
     promoteproduct: '/promoteproduct',
+    outstanding: '/outstanding',
+    coconutCream: '/coconut-cream',
+    drinks: '/drinks',
+    iceCreamCup: '/ice-cream-cup',
+    topping: '/topping',
+    system: '/system',
+    contact: '/contact',
 };
 
 export default routes;

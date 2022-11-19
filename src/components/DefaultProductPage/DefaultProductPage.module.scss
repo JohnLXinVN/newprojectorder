@@ -1,0 +1,45 @@
+.menu {
+    border-right: 1px solid var(--border-color);
+    height: 100%;
+
+    h3 {
+        background-color: #ddd;
+        padding: 12px 16px;
+        font-weight: 400;
+        text-transform: uppercase;
+    }
+
+    .title-header {
+        margin-bottom: 48px;
+    }
+
+    .lists {
+        margin-top: 14px;
+
+        .item {
+            display: block;
+            padding: 6px 0;
+            font-weight: 400;
+            font-size: 1.7rem;
+            transition: all 0.2s ease;
+
+            &:hover {
+                color: var(--primary-color);
+            }
+        }
+    }
+}
+
+.main-container {
+    margin-bottom: 46px;
+
+    .title-header {
+        border-top: 1px solid var(--border-color);
+        border-bottom: 1px solid var(--border-color);
+        width: 100%;
+        padding: 12px 0;
+        font-size: 2rem;
+        font-weight: 400;
+        margin-bottom: 24px;
+    }
+}

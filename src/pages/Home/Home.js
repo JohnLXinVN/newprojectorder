@@ -8,89 +8,32 @@ import 'swiper/css/navigation';
 
 import styles from './Home.module.scss';
 import images from '~/assets/images';
-import { Link } from 'react-router-dom';
 import ItemProduct from '~/components/ItemProduct';
 import video from '~/assets/video';
+import ProductItems from '~/components/ListProductItems';
+import { useEffect } from 'react';
 
 const cx = classNames.bind(styles);
 
 function Home() {
-    const popularProductsItems = [
-        {
-            id: 1,
-            title: 'Kem dừa Côn Đảo',
-            price: 1.9,
-            img: images.PopularProduct1,
-        },
-        {
-            id: 2,
-            title: 'Kem dừa Matcha',
-            price: 1.9,
-            img: images.PopularProduct2,
-        },
-        {
-            id: 3,
-            title: 'Kem dừa xôi lá dứa',
-            price: 1.9,
-            img: images.PopularProduct3,
-        },
-        {
-            id: 4,
-            title: 'Kem dừa Sầu Riêng',
-            price: 2,
-            img: images.PopularProduct4,
-        },
-    ];
-    const bestSellingProductItems = [
-        {
-            id: 1,
-            title: 'Kem trái dừa xôi lá dừa',
-            price: 1.7,
-            img: images.BestSellingProduct1,
-        },
-        {
-            id: 2,
-            title: 'Kem trái dừa Than tre',
-            price: 1.9,
-            img: images.BestSellingProduct2,
-        },
-        {
-            id: 3,
-            title: 'Kem trái dừa Sàu riêng',
-            price: 1.5,
-            img: images.BestSellingProduct3,
-        },
-        {
-            id: 4,
-            title: 'Kem trái dừa Trân châu',
-            price: 2.3,
-            img: images.BestSellingProduct4,
-        },
-        {
-            id: 5,
-            title: 'Kem ly Sầu riêng',
-            price: 3,
-            img: images.BestSellingProduct5,
-        },
-        {
-            id: 6,
-            title: 'Kem ly Socola',
-            price: 1.7,
-            img: images.BestSellingProduct6,
-        },
-        {
-            id: 7,
-            title: 'Kem ly Matcha',
-            price: 2.4,
-            img: images.BestSellingProduct7,
-        },
-        {
-            id: 8,
-            title: 'Kem ly Côn đảo',
-            price: 1.7,
-            img: images.BestSellingProduct8,
-        },
-    ];
+    const popularProductsItems = ProductItems.filter(
+        (item) => item.popularProducts === 'true',
+    );
+    const bestSellingProductItems = ProductItems.filter(
+        (item) => item.bestSellingProduct === 'true',
+    );
+    const scrollToTop = () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth',
+            /* you can also use 'auto' behaviour
+             in place of 'smooth' */
+        });
+    };
+
+    useEffect(() => {
+        scrollToTop();
+    }, []);
 
     return (
         <div className={cx('wrapper')}>
@@ -219,11 +162,7 @@ function Home() {
                     <div className="row">
                         {popularProductsItems.map((item) => (
                             <div className="col-3" key={item.id}>
-                                <ItemProduct
-                                    img={item.img}
-                                    title={item.title}
-                                    price={item.price}
-                                />
+                                <ItemProduct item={item} />
                             </div>
                         ))}
                     </div>
@@ -250,11 +189,7 @@ function Home() {
                                 <div className="row">
                                     {bestSellingProductItems.map((item) => (
                                         <div className="col-3" key={item.id}>
-                                            <ItemProduct
-                                                title={item.title}
-                                                img={item.img}
-                                                price={item.price}
-                                            />
+                                            <ItemProduct item={item} />
                                         </div>
                                     ))}
                                 </div>

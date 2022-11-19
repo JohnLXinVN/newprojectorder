@@ -1,7 +1,3 @@
-.wrapper {
-    margin-top: var(--header-height);
-}
-
 .direction {
     .wrap {
         padding: 24px 0;
@@ -49,6 +45,7 @@
 
         .link-face {
             font-size: 1.8rem;
+            margin-bottom: 46px;
 
             a {
                 transition: all 0.2s ease-in-out;
