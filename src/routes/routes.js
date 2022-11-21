@@ -1,3 +1,4 @@
+import CartPage from '~/components/Cart/CartPage';
 import config from '~/config';
 import CoconutCream from '~/pages/CoconutCream';
 import Contact from '~/pages/Contact';
@@ -25,6 +26,7 @@ const publicRoutes = [
     { path: config.routes.topping, component: Topping },
     { path: config.routes.system, component: System },
     { path: config.routes.contact, component: Contact },
+    { path: config.routes.cart, component: CartPage },
 ];
 
 const privateRoutes = [];

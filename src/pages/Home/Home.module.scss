@@ -137,6 +137,8 @@
         .list-category {
             border-right: 1px solid var(--border-color);
             padding: 16px 4px;
+            display: flex;
+            flex-direction: column;
 
             .item {
                 padding: 6px 0;
