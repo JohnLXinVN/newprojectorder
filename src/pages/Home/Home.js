@@ -12,6 +12,8 @@ import ItemProduct from '~/components/ItemProduct';
 import video from '~/assets/video';
 import ProductItems from '~/components/ListProductItems';
 import { useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import config from '~/config';
 
 const cx = classNames.bind(styles);
 
@@ -175,11 +177,36 @@ function Home() {
                             <div className={cx('category')}>
                                 <h1 className={cx('heading')}>Category</h1>
                                 <div className={cx('list-category')}>
-                                    <div className={cx('item')}>Outstanding (7)</div>
-                                    <div className={cx('item')}>Coconut Cream (7)</div>
-                                    <div className={cx('item')}>Drinks (0)</div>
-                                    <div className={cx('item')}>Ice cream cup (7)</div>
-                                    <div className={cx('item')}>Topping (7)</div>
+                                    <Link
+                                        className={cx('item')}
+                                        to={config.routes.outstanding}
+                                    >
+                                        Outstanding (7)
+                                    </Link>
+                                    <Link
+                                        className={cx('item')}
+                                        to={config.routes.coconutCream}
+                                    >
+                                        Coconut Cream (7)
+                                    </Link>
+                                    <Link
+                                        className={cx('item')}
+                                        to={config.routes.drinks}
+                                    >
+                                        Drinks (0)
+                                    </Link>
+                                    <Link
+                                        className={cx('item')}
+                                        to={config.routes.iceCreamCup}
+                                    >
+                                        Ice cream cup (7)
+                                    </Link>
+                                    <Link
+                                        className={cx('item')}
+                                        to={config.routes.topping}
+                                    >
+                                        Topping (7)
+                                    </Link>
                                 </div>
                             </div>
                         </div>

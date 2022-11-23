@@ -11,6 +11,7 @@ const routes = {
     topping: '/topping',
     system: '/system',
     contact: '/contact',
+    cart: '/cart',
 };
 
 export default routes;

@@ -13,6 +13,7 @@ import Tippy from '@tippyjs/react/headless';
 import classNames from 'classnames/bind';
 import { Link } from 'react-router-dom';
 import images from '~/assets/images';
+import MiniCart from '~/components/Cart/MiniCart';
 import { Wrapper as PopperWrapper } from '~/components/Popper';
 
 import config from '~/config';
@@ -184,13 +185,23 @@ function Header() {
                         >
                             Contact
                         </Link>
-                        <div className={cx('cart', 'item')}>
-                            <FontAwesomeIcon
-                                className={cx('icon-cart')}
-                                icon={faCartShopping}
-                            />
-                            <div className={cx('amount')}>3</div>
-                        </div>
+                        <Tippy
+                            interactive
+                            placement="bottom-start"
+                            render={(attrs) => (
+                                <div className="box" tabIndex="-1" {...attrs}>
+                                    <MiniCart />
+                                </div>
+                            )}
+                        >
+                            <Link className={cx('cart', 'item')} to={config.routes.cart}>
+                                <FontAwesomeIcon
+                                    className={cx('icon-cart')}
+                                    icon={faCartShopping}
+                                />
+                                <div className={cx('amount')}>3</div>
+                            </Link>
+                        </Tippy>
                     </div>
                 </div>
             </div>
