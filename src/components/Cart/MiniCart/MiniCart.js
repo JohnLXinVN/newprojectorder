@@ -71,6 +71,7 @@ const MiniCart = () => {
             <div className={cx('footer')}>
                 <div className={cx('amount-price')}>
                     <p>Total amount: </p>
+
                     <div className={cx('price-checkout')}>{totalPriceAll}$</div>
                 </div>
                 <div className={cx('btn-footer')}>
