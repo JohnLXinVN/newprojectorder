@@ -11,7 +11,9 @@ import {
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Tippy from '@tippyjs/react/headless';
 import classNames from 'classnames/bind';
+import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { Col, Container, Row } from 'reactstrap';
 import images from '~/assets/images';
 import MiniCart from '~/components/Cart/MiniCart';
 import { Wrapper as PopperWrapper } from '~/components/Popper';
@@ -22,12 +24,14 @@ import styles from './Header.module.scss';
 const cx = classNames.bind(styles);
 
 function Header() {
+    const totalAmountAll = useSelector((state) => state.cart.totalAmountAll);
+
     return (
         <div className={cx('wrapper')}>
             <div className={cx('top-bar')}>
-                <div className="container">
-                    <div className="row">
-                        <div className="col-6">
+                <Container>
+                    <Row>
+                        <Col lg="6">
                             <div className={cx('top-bar-left')}>
                                 <div className={cx('location', 'item')}>
                                     <div className="df">
@@ -54,8 +58,8 @@ function Header() {
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div className="col-6">
+                        </Col>
+                        <Col lg="6">
                             <div className={cx('top-bar-right')}>
                                 <Link
                                     className={cx('register', 'item')}
@@ -109,12 +113,12 @@ function Header() {
                                     </div>
                                 </Tippy>
                             </div>
-                        </div>
-                    </div>
-                </div>
+                        </Col>
+                    </Row>
+                </Container>
             </div>
             <div className={cx('bottom-bar')}>
-                <div className="container">
+                <Container>
                     <div className={cx('inner-header')}>
                         <Link
                             className={cx('menu-item', 'item')}
@@ -134,7 +138,7 @@ function Header() {
                                 />
                             </Link>
                             <PopperWrapper className={cx('wrap-popper')}>
-                                <ul className={cx('list-item')}>
+                                <div className={cx('list-item')}>
                                     <Link
                                         className={cx('item-child')}
                                         to={config.routes.outstanding}
@@ -165,7 +169,7 @@ function Header() {
                                     >
                                         Topping
                                     </Link>
-                                </ul>
+                                </div>
                             </PopperWrapper>
                         </div>
 
@@ -185,25 +189,31 @@ function Header() {
                         >
                             Contact
                         </Link>
-                        <Tippy
-                            interactive
-                            placement="bottom-start"
-                            render={(attrs) => (
-                                <div className="box" tabIndex="-1" {...attrs}>
-                                    <MiniCart />
-                                </div>
-                            )}
-                        >
-                            <Link className={cx('cart', 'item')} to={config.routes.cart}>
-                                <FontAwesomeIcon
-                                    className={cx('icon-cart')}
-                                    icon={faCartShopping}
-                                />
-                                <div className={cx('amount')}>3</div>
-                            </Link>
-                        </Tippy>
+
+                        <div className={cx('wrap-cart')}>
+                            <Tippy
+                                interactive
+                                placement="bottom-start"
+                                render={(attrs) => (
+                                    <div className="box" tabIndex="-1" {...attrs}>
+                                        <MiniCart />
+                                    </div>
+                                )}
+                            >
+                                <Link
+                                    className={cx('cart', 'item')}
+                                    to={config.routes.cart}
+                                >
+                                    <FontAwesomeIcon
+                                        className={cx('icon-cart')}
+                                        icon={faCartShopping}
+                                    />
+                                    <div className={cx('amount')}>{totalAmountAll}</div>
+                                </Link>
+                            </Tippy>
+                        </div>
                     </div>
-                </div>
+                </Container>
             </div>
         </div>
     );

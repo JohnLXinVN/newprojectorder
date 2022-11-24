@@ -1,5 +1,6 @@
 import classNames from 'classnames/bind';
 import { useEffect } from 'react';
+import { Container } from 'reactstrap';
 import Direction from '~/components/Direction';
 
 import styles from './Introduce.module.scss';
@@ -23,7 +24,7 @@ function Introduce() {
         <div className={cx('wrapper')}>
             <Direction title="Introduce" />
             <div className={cx('page')}>
-                <div className="container">
+                <Container>
                     <div className={cx('header-page')}>
                         <h1>Introduce</h1>
                     </div>
@@ -215,7 +216,7 @@ function Introduce() {
                             </a>
                         </div>
                     </div>
-                </div>
+                </Container>
             </div>
         </div>
     );

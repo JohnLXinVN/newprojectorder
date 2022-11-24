@@ -18,6 +18,9 @@ import {
     faPhone,
 } from '@fortawesome/free-solid-svg-icons';
 import Button from '~/components/Button';
+import { Link } from 'react-router-dom';
+import config from '~/config';
+import { Col, Container, Row } from 'reactstrap';
 
 const cx = classNames.bind(styles);
 
@@ -25,7 +28,7 @@ function Footer() {
     return (
         <div className={cx('wrapper')}>
             <div className={cx('selection-brand')}>
-                <div className="container">
+                <Container>
                     <div className={cx('wrap-brand')}>
                         <div className={cx('img-brand')}>
                             <img src={images.imgBrand3} alt="" />
@@ -44,12 +47,12 @@ function Footer() {
                             <img src={images.imgBrand7} alt="" />
                         </div>
                     </div>
-                </div>
+                </Container>
             </div>
             <div className={cx('footer-top')}>
-                <div className="container">
-                    <div className="row">
-                        <div className="col-8">
+                <Container>
+                    <Row>
+                        <Col lg="8">
                             <div className={cx('wrap-contact')}>
                                 <h5>Send email</h5>
                                 <form action="" className={cx('form-email')}>
@@ -65,8 +68,8 @@ function Footer() {
                                     </Button>
                                 </form>
                             </div>
-                        </div>
-                        <div className="col-4">
+                        </Col>
+                        <Col lg="4">
                             <ul className={cx('social-items')}>
                                 <li className={cx('icon')}>
                                     <FontAwesomeIcon icon={faTwitter} />
@@ -87,64 +90,82 @@ function Footer() {
                                     <FontAwesomeIcon icon={faYoutube} />
                                 </li>
                             </ul>
-                        </div>
-                    </div>
-                </div>
+                        </Col>
+                    </Row>
+                </Container>
             </div>
             <div className={cx('site-bottom')}>
-                <div className="container">
+                <Container>
                     <div className={cx('inner')}>
-                        <div className="row">
-                            <div className="col-4">
+                        <Row>
+                            <Col lg="4">
                                 <div className={cx('information')}>
                                     <h4 className={cx('header')}>Information</h4>
                                     <div className={cx('list-items')}>
-                                        <div className={cx('item')}>
+                                        <Link
+                                            className={cx('item')}
+                                            to={config.routes.introduce}
+                                        >
                                             <FontAwesomeIcon
                                                 className={cx('icon')}
                                                 icon={faCaretRight}
                                             />
                                             Introduce
-                                        </div>
-                                        <div className={cx('item')}>
+                                        </Link>
+                                        <Link
+                                            className={cx('item')}
+                                            to={config.routes.promoteproduct}
+                                        >
                                             <FontAwesomeIcon
                                                 className={cx('icon')}
                                                 icon={faCaretRight}
                                             />
                                             Menu
-                                        </div>
-                                        <div className={cx('item')}>
+                                        </Link>
+                                        <Link
+                                            className={cx('item')}
+                                            to={config.routes.home}
+                                        >
                                             <FontAwesomeIcon
                                                 className={cx('icon')}
                                                 icon={faCaretRight}
                                             />
                                             Franchise
-                                        </div>
-                                        <div className={cx('item')}>
+                                        </Link>
+                                        <Link
+                                            className={cx('item')}
+                                            to={config.routes.system}
+                                        >
                                             <FontAwesomeIcon
                                                 className={cx('icon')}
                                                 icon={faCaretRight}
                                             />
                                             System
-                                        </div>
-                                        <div className={cx('item')}>
+                                        </Link>
+                                        <Link
+                                            className={cx('item')}
+                                            to={config.routes.home}
+                                        >
                                             <FontAwesomeIcon
                                                 className={cx('icon')}
                                                 icon={faCaretRight}
                                             />
                                             News
-                                        </div>
-                                        <div className={cx('item')}>
+                                        </Link>
+                                        <Link
+                                            className={cx('item')}
+                                            to={config.routes.contact}
+                                        >
                                             <FontAwesomeIcon
                                                 className={cx('icon')}
                                                 icon={faCaretRight}
                                             />
                                             Contact
-                                        </div>
+                                        </Link>
                                     </div>
                                 </div>
-                            </div>
-                            <div className="col-4">
+                            </Col>
+                            <Col lg="4">
                                 <div className={cx('blog')}>
                                     <h4 className={cx('header')}>Blog</h4>
                                     <div className={cx('list-blog')}>
@@ -182,8 +203,8 @@ function Footer() {
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div className="col-4">
+                            </Col>
+                            <Col lg="4">
                                 <div className={cx('contact')}>
                                     <h4 className={cx('header')}>Contact</h4>
                                     <p>
@@ -223,27 +244,27 @@ function Footer() {
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
+                            </Col>
+                        </Row>
                     </div>
-                </div>
+                </Container>
             </div>
             <div className={cx('footer-bottom')}>
-                <div className="container">
-                    <div className="row">
-                        <div className="col-8">
+                <Container>
+                    <Row>
+                        <Col lg="8">
                             <div className={cx('text')}>
                                 Copyright belongs to <b> Hoang Minh Anh</b> | Provided by
                                 Hoang Minh Anh
                             </div>
-                        </div>
-                        <div className="col-4">
+                        </Col>
+                        <Col lg="4">
                             <div className={cx('pay')}>
                                 <img src={images.imgPayment} alt="" />
                             </div>
-                        </div>
-                    </div>
-                </div>
+                        </Col>
+                    </Row>
+                </Container>
             </div>
         </div>
     );

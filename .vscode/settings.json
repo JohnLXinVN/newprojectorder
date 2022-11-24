@@ -3,12 +3,19 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "cSpell.words": [
         "anhhm",
+        "behaviour",
+        "fontawesome",
+        "fortawesome",
         "optimizespeed",
         "promoteproduct",
         "promoteproductm",
+        "reduxjs",
         "sofiapro",
         "tabindex",
-        "tailwindcss"
+        "tailwindcss",
+        "toastify",
+        "Viet",
+        "Xmark"
     ],
     "[javascript]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"

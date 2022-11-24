@@ -117,6 +117,14 @@
         flex-direction: row;
         justify-content: center;
         align-items: center;
+        position: relative;
+
+        .wrap-cart {
+            position: absolute;
+            right: 60px;
+            top: calc(var(--bottom-bar-height) / 2);
+            transform: translateY(-50%);
+        }
     }
 
     .menu-item {

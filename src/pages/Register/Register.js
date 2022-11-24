@@ -1,4 +1,5 @@
 import classNames from 'classnames/bind';
+import { Col, Container, Row } from 'reactstrap';
 import images from '~/assets/images';
 import Button from '~/components/Button';
 import Direction from '~/components/Direction';
@@ -11,57 +12,57 @@ function Register() {
     return (
         <div className={cx('wrapper')}>
             <Direction title="Register" />
-            <div className="container">
+            <Container>
                 <div className={cx('header-page')}>
                     <h1>Register</h1>
                 </div>
                 <div className={cx('content-page')}>
                     <p>If you don't have an account, please register here</p>
                     <form action="" className={cx('wrap-form')}>
-                        <div className="row">
-                            <div className="col-6">
+                        <Row>
+                            <Col lg="6">
                                 <div className={cx('item')}>
                                     <div className={cx('title-item')}>
                                         Surname <span>*</span>
                                     </div>
                                     <input type="text" />
                                 </div>
-                            </div>
-                            <div className="col-6">
+                            </Col>
+                            <Col lg="6">
                                 <div className={cx('item')}>
                                     <div className={cx('title-item')}>
                                         Name <span>*</span>
                                     </div>
                                     <input type="text" />
                                 </div>
-                            </div>
-                            <div className="col-6">
+                            </Col>
+                            <Col lg="6">
                                 <div className={cx('item')}>
                                     <div className={cx('title-item')}>
                                         Email <span>*</span>
                                     </div>
                                     <input type="email" />
                                 </div>
-                            </div>
-                            <div className="col-6">
+                            </Col>
+                            <Col lg="6">
                                 <div className={cx('item')}>
                                     <div className={cx('title-item')}>
                                         Phone number <span>*</span>
                                     </div>
                                     <input type="tel" />
                                 </div>
-                            </div>
-                        </div>
-                        <div className="row">
-                            <div className="col-12">
+                            </Col>
+                        </Row>
+                        <Row>
+                            <Col lg="12">
                                 <div className={cx('item')}>
                                     <div className={cx('title-item')}>
                                         Password <span>*</span>
                                     </div>
                                     <input type="password" />
                                 </div>
-                            </div>
-                        </div>
+                            </Col>
+                        </Row>
                         <Button primary borderRadius className={cx('btn')}>
                             Register
                         </Button>
@@ -78,7 +79,7 @@ function Register() {
                         </div>
                     </div>
                 </div>
-            </div>
+            </Container>
         </div>
     );
 }

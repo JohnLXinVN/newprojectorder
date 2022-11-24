@@ -18,6 +18,10 @@
         overflow-y: auto;
         margin-top: 24px;
 
+        h2 {
+            color: red;
+        }
+
         .item {
             display: flex;
             flex-direction: row;
@@ -63,12 +67,20 @@
                     border: 1px solid var(--border-color);
                     padding: 4px;
                     align-items: center;
+                    display: flex;
+                    justify-content: center;
 
                     .icon-minus {
                         margin-right: 8px;
                         padding: 2px;
                         cursor: pointer;
                     }
+
+                    .quantity {
+                        width: 20px;
+                        text-align: center;
+                    }
+
                     .icon-plus {
                         margin-left: 8px;
                         padding: 2px;
@@ -136,12 +148,17 @@
 .wrap-info-more {
     margin-top: 48px;
 
+    .btn-see-more {
+        cursor: pointer;
+    }
+
     .icon-ticket {
         margin-right: 4px;
     }
 
     .input {
         border: 1px solid var(--border-color);
+        margin-top: 6px;
 
         .form-input {
             display: flex;

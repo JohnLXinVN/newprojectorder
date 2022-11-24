@@ -1,5 +1,6 @@
 import classNames from 'classnames/bind';
 import { Link } from 'react-router-dom';
+import { Col, Container, Row } from 'reactstrap';
 import Direction from '../Direction';
 import ItemProduct from '../ItemProduct';
 
@@ -11,10 +12,10 @@ function DefaultProductPage({ product, productName }) {
     return (
         <div className={cx('wrapper')}>
             <Direction title={productName} />
-            <div className="container">
+            <Container>
                 <div className={cx('content-page')}>
-                    <div className="row">
-                        <div className="col-2">
+                    <Row>
+                        <Col lg="2">
                             <div className={cx('menu')}>
                                 <h3 className={cx('title-header')}>Category</h3>
                                 <div className={cx('wrap-guide')}>
@@ -29,27 +30,31 @@ function DefaultProductPage({ product, productName }) {
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div className="col-10">
+                        </Col>
+                        <Col lg="10">
                             <div className={cx('main-container')}>
                                 <div className={cx('header')}>
                                     <h3 className={cx('title-header')}>{productName}</h3>
 
                                     <div className={cx('list-items')}>
-                                        <div className="row">
+                                        <Row>
                                             {product.map((item) => (
-                                                <div className="col-3" key={item.id}>
+                                                <Col
+                                                    lg="3"
+                                                    key={item.id}
+                                                    className="mb-4"
+                                                >
                                                     <ItemProduct item={item} />
-                                                </div>
+                                                </Col>
                                             ))}
-                                        </div>
+                                        </Row>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
+                        </Col>
+                    </Row>
                 </div>
-            </div>
+            </Container>
         </div>
     );
 }

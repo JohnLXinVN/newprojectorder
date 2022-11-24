@@ -22,10 +22,6 @@ function App() {
         });
     };
 
-    useEffect(() => {
-        scrollToTop();
-    }, []);
-
     window.addEventListener('scroll', () => {
         if (window.scrollY > 100) {
             setArrowTop(true);

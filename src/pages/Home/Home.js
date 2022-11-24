@@ -14,6 +14,7 @@ import ProductItems from '~/components/ListProductItems';
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import config from '~/config';
+import { Col, Container, Row } from 'reactstrap';
 
 const cx = classNames.bind(styles);
 
@@ -24,6 +25,7 @@ function Home() {
     const bestSellingProductItems = ProductItems.filter(
         (item) => item.bestSellingProduct === 'true',
     );
+
     const scrollToTop = () => {
         window.scrollTo({
             top: 0,
@@ -32,7 +34,6 @@ function Home() {
              in place of 'smooth' */
         });
     };
-
     useEffect(() => {
         scrollToTop();
     }, []);
@@ -71,29 +72,29 @@ function Home() {
                 </div>
             </div>
             <div className={cx('banner2')}>
-                <div className="container">
-                    <div className="row">
-                        <div className="col-6">
+                <Container>
+                    <Row>
+                        <Col lg="6">
                             <img
                                 className={cx('img-banner2')}
                                 src={images.homeImg3}
                                 alt=""
                             />
-                        </div>
-                        <div className="col-6">
+                        </Col>
+                        <Col lg="6">
                             <img
                                 className={cx('img-banner2')}
                                 src={images.homeImg4}
                                 alt=""
                             />
-                        </div>
-                    </div>
-                </div>
+                        </Col>
+                    </Row>
+                </Container>
             </div>
             <div className={cx('store-address')}>
-                <div className="container">
-                    <div className="row">
-                        <div className="col-4">
+                <Container>
+                    <Row>
+                        <Col lg="4" className="mb-4">
                             <div className={cx('banner-item', 'wrap-img')}>
                                 <div className={cx('info')}>
                                     <span>Cơ sở 3: Sông Công Thái Nguyên</span>
@@ -104,8 +105,8 @@ function Home() {
                                 <div className={cx('ov3')}></div>
                                 <div className={cx('ov4')}></div>
                             </div>
-                        </div>
-                        <div className="col-4">
+                        </Col>
+                        <Col lg="4" className="mb-4">
                             <div className={cx('banner-item', 'wrap-img')}>
                                 <div className={cx('info')}>
                                     <span>
@@ -118,8 +119,9 @@ function Home() {
                                 <div className={cx('ov3')}></div>
                                 <div className={cx('ov4')}></div>
                             </div>
-                        </div>
-                        <div className="col-4">
+                        </Col>
+
+                        <Col lg="4" className="mb-4">
                             <div className={cx('banner-item', 'wrap-img')}>
                                 <div className={cx('info')}>
                                     <span>Cơ sở 66 - Phổ Yên, Thái Nguyên</span>
@@ -130,8 +132,9 @@ function Home() {
                                 <div className={cx('ov3')}></div>
                                 <div className={cx('ov4')}></div>
                             </div>
-                        </div>
-                        <div className="col-4">
+                        </Col>
+
+                        <Col lg="4" className="mb-4">
                             <div className={cx('banner-item', 'wrap-img')}>
                                 <div className={cx('info')}>
                                     <span>Cơ sở 54 - TP Yên Bái</span>
@@ -142,8 +145,9 @@ function Home() {
                                 <div className={cx('ov3')}></div>
                                 <div className={cx('ov4')}></div>
                             </div>
-                        </div>
-                        <div className="col-4">
+                        </Col>
+
+                        <Col lg="4" className="mb-4">
                             <div className={cx('banner-item', 'wrap-img')}>
                                 <div className={cx('info')}>
                                     <span>Cơ sở 69 - Bình Chánh Hồ Chí Minh</span>
@@ -154,26 +158,26 @@ function Home() {
                                 <div className={cx('ov3')}></div>
                                 <div className={cx('ov4')}></div>
                             </div>
-                        </div>
-                    </div>
-                </div>
+                        </Col>
+                    </Row>
+                </Container>
             </div>
             <div className={cx('popular-products')}>
                 <h1 className={cx('header')}>Popular products</h1>
-                <div className="container">
-                    <div className="row">
+                <Container>
+                    <Row>
                         {popularProductsItems.map((item) => (
-                            <div className="col-3" key={item.id}>
+                            <Col lg="3" key={item.id} className="mb-4">
                                 <ItemProduct item={item} />
-                            </div>
+                            </Col>
                         ))}
-                    </div>
-                </div>
+                    </Row>
+                </Container>
             </div>
             <div className={cx('best-selling-product')}>
-                <div className="container">
-                    <div className="row">
-                        <div className="col-2">
+                <Container>
+                    <Row>
+                        <Col lg="2">
                             <div className={cx('category')}>
                                 <h1 className={cx('heading')}>Category</h1>
                                 <div className={cx('list-category')}>
@@ -181,53 +185,83 @@ function Home() {
                                         className={cx('item')}
                                         to={config.routes.outstanding}
                                     >
-                                        Outstanding (7)
+                                        Outstanding (
+                                        {
+                                            ProductItems.filter(
+                                                (item) => item.outStanding === 'true',
+                                            ).length
+                                        }
+                                        )
                                     </Link>
                                     <Link
                                         className={cx('item')}
                                         to={config.routes.coconutCream}
                                     >
-                                        Coconut Cream (7)
+                                        Coconut Cream (
+                                        {
+                                            ProductItems.filter(
+                                                (item) => item.coconutCream === 'true',
+                                            ).length
+                                        }
+                                        )
                                     </Link>
                                     <Link
                                         className={cx('item')}
                                         to={config.routes.drinks}
                                     >
-                                        Drinks (0)
+                                        Drinks (
+                                        {
+                                            ProductItems.filter(
+                                                (item) => item.drinks === 'true',
+                                            ).length
+                                        }
+                                        )
                                     </Link>
                                     <Link
                                         className={cx('item')}
                                         to={config.routes.iceCreamCup}
                                     >
-                                        Ice cream cup (7)
+                                        Ice cream cup (
+                                        {
+                                            ProductItems.filter(
+                                                (item) => item.iceCreamCup === 'true',
+                                            ).length
+                                        }
+                                        )
                                     </Link>
                                     <Link
                                         className={cx('item')}
                                         to={config.routes.topping}
                                     >
-                                        Topping (7)
+                                        Topping (
+                                        {
+                                            ProductItems.filter(
+                                                (item) => item.topping === 'true',
+                                            ).length
+                                        }
+                                        )
                                     </Link>
                                 </div>
                             </div>
-                        </div>
-                        <div className="col-10">
+                        </Col>
+                        <Col lg="10">
                             <h1 className={cx('header')}>Best Selling Product</h1>
                             <div className={cx('list-best-selling-product')}>
-                                <div className="row">
+                                <Row>
                                     {bestSellingProductItems.map((item) => (
-                                        <div className="col-3" key={item.id}>
+                                        <Col lg="3" key={item.id} className="mb-4">
                                             <ItemProduct item={item} />
-                                        </div>
+                                        </Col>
                                     ))}
-                                </div>
+                                </Row>
                             </div>
-                        </div>
-                    </div>
-                </div>
+                        </Col>
+                    </Row>
+                </Container>
             </div>
             <div className={cx('about-us')}>
                 <h1 className={cx('header')}>About us</h1>
-                <div className="container">
+                <Container>
                     <div className={cx('wrap-about-us')}>
                         <div className={cx('description')}>
                             <h3 className={cx('heading')}>Cocoo - Kem dừa Côn Đảo</h3>
@@ -247,7 +281,7 @@ function Home() {
                             />
                         </div>
                     </div>
-                </div>
+                </Container>
             </div>
         </div>
     );

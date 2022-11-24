@@ -101,6 +101,11 @@
         text-transform: uppercase;
     }
 
+    .list-items {
+        display: flex;
+        flex-direction: column;
+    }
+
     .item {
         padding: 4px 0;
         color: var(--footer-text-color);

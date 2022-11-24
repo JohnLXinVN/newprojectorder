@@ -7,141 +7,90 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import classNames from 'classnames/bind';
-import { useState } from 'react';
-import images from '~/assets/images';
+import { useDispatch, useSelector } from 'react-redux';
+import { Col, Container, Row } from 'reactstrap';
 import Button from '~/components/Button';
 import Direction from '~/components/Direction';
+import { CartActions } from '~/components/Redux/feature/cart/CartSlice';
 
 import styles from './CartPage.module.scss';
 
 const cx = classNames.bind(styles);
 
 const CartPage = () => {
-    const [seeMore, setSeeMore] = useState(false);
+    const stateCart = useSelector((state) => state.cart.cartItems);
+    const totalPriceAll = useSelector((state) => state.cart.totalPriceAll);
+    const totalAmountAll = useSelector((state) => state.cart.totalAmountAll);
+    const dispatch = useDispatch();
 
     return (
         <div className={cx('wrapper')}>
             <Direction title="Cart" />
-            <div className="container">
-                <div className="row">
-                    <div className="col-8">
+            <Container>
+                <Row>
+                    <Col lg="8">
                         <div className={cx('wrap-product')}>
                             <div className={cx('header-page')}>
                                 <h1>Your Cart</h1>
                             </div>
                             <div className={cx('list-item')}>
-                                <div className={cx('item')}>
-                                    <div className={cx('info')}>
-                                        <img src={images.imgProduct15} alt="" />
-                                        <div className={cx('product-des')}>
-                                            <div className={cx('title')}>
-                                                Kem dừa ngon
+                                {totalAmountAll < 1 ? (
+                                    <h2>Your cart is clear</h2>
+                                ) : (
+                                    stateCart.map((item) => (
+                                        <div className={cx('item')} key={item.id}>
+                                            <div className={cx('info')}>
+                                                <img src={item.img} alt="" />
+                                                <div className={cx('product-des')}>
+                                                    <div className={cx('title')}>
+                                                        {item.title}
+                                                    </div>
+                                                    <div className={cx('price')}>
+                                                        {item.price}$
+                                                    </div>
+                                                </div>
                                             </div>
-                                            <div className={cx('price')}>12$</div>
-                                        </div>
-                                    </div>
-                                    <div className={cx('quality-info')}>
-                                        <div className={cx('input-quantity')}>
-                                            <FontAwesomeIcon
-                                                className={cx('icon-minus')}
-                                                icon={faMinus}
-                                            />
-                                            12
-                                            <FontAwesomeIcon
-                                                className={cx('icon-plus')}
-                                                icon={faPlus}
-                                            />
-                                        </div>
-                                        <div className={cx('price-total')}>122$</div>
-                                        <div className={cx('btn-remove')}>
-                                            <FontAwesomeIcon icon={faXmark} />
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className={cx('item')}>
-                                    <div className={cx('info')}>
-                                        <img src={images.imgProduct15} alt="" />
-                                        <div className={cx('product-des')}>
-                                            <div className={cx('title')}>
-                                                Kem dừa ngon
+                                            <div className={cx('quality-info')}>
+                                                <div className={cx('input-quantity')}>
+                                                    <FontAwesomeIcon
+                                                        className={cx('icon-minus')}
+                                                        icon={faMinus}
+                                                        onClick={() =>
+                                                            dispatch(
+                                                                CartActions.decrease(
+                                                                    item,
+                                                                ),
+                                                            )
+                                                        }
+                                                    />
+                                                    <div className={cx('quantity')}>
+                                                        {item.quantity}
+                                                    </div>
+                                                    <FontAwesomeIcon
+                                                        className={cx('icon-plus')}
+                                                        icon={faPlus}
+                                                        onClick={() =>
+                                                            dispatch(
+                                                                CartActions.addItem(item),
+                                                            )
+                                                        }
+                                                    />
+                                                </div>
+                                                <div className={cx('price-total')}>
+                                                    {item.totalPrice}$
+                                                </div>
+                                                <div
+                                                    className={cx('btn-remove')}
+                                                    onClick={() =>
+                                                        dispatch(CartActions.remove(item))
+                                                    }
+                                                >
+                                                    <FontAwesomeIcon icon={faXmark} />
+                                                </div>
                                             </div>
-                                            <div className={cx('price')}>12$</div>
                                         </div>
-                                    </div>
-                                    <div className={cx('quality-info')}>
-                                        <div className={cx('input-quantity')}>
-                                            <FontAwesomeIcon
-                                                className={cx('icon-minus')}
-                                                icon={faMinus}
-                                            />
-                                            12
-                                            <FontAwesomeIcon
-                                                className={cx('icon-plus')}
-                                                icon={faPlus}
-                                            />
-                                        </div>
-                                        <div className={cx('price-total')}>122$</div>
-                                        <div className={cx('btn-remove')}>
-                                            <FontAwesomeIcon icon={faXmark} />
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className={cx('item')}>
-                                    <div className={cx('info')}>
-                                        <img src={images.imgProduct15} alt="" />
-                                        <div className={cx('product-des')}>
-                                            <div className={cx('title')}>
-                                                Kem dừa ngon
-                                            </div>
-                                            <div className={cx('price')}>12$</div>
-                                        </div>
-                                    </div>
-                                    <div className={cx('quality-info')}>
-                                        <div className={cx('input-quantity')}>
-                                            <FontAwesomeIcon
-                                                className={cx('icon-minus')}
-                                                icon={faMinus}
-                                            />
-                                            12
-                                            <FontAwesomeIcon
-                                                className={cx('icon-plus')}
-                                                icon={faPlus}
-                                            />
-                                        </div>
-                                        <div className={cx('price-total')}>122$</div>
-                                        <div className={cx('btn-remove')}>
-                                            <FontAwesomeIcon icon={faXmark} />
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className={cx('item')}>
-                                    <div className={cx('info')}>
-                                        <img src={images.imgProduct15} alt="" />
-                                        <div className={cx('product-des')}>
-                                            <div className={cx('title')}>
-                                                Kem dừa ngon
-                                            </div>
-                                            <div className={cx('price')}>12$</div>
-                                        </div>
-                                    </div>
-                                    <div className={cx('quality-info')}>
-                                        <div className={cx('input-quantity')}>
-                                            <FontAwesomeIcon
-                                                className={cx('icon-minus')}
-                                                icon={faMinus}
-                                            />
-                                            12
-                                            <FontAwesomeIcon
-                                                className={cx('icon-plus')}
-                                                icon={faPlus}
-                                            />
-                                        </div>
-                                        <div className={cx('price-total')}>122$</div>
-                                        <div className={cx('btn-remove')}>
-                                            <FontAwesomeIcon icon={faXmark} />
-                                        </div>
-                                    </div>
-                                </div>
+                                    ))
+                                )}
                             </div>
                             <div className={cx('wrap-info-more')}>
                                 <div className={cx('btn-see-more')}>
@@ -164,15 +113,15 @@ const CartPage = () => {
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div className="col-4">
+                    </Col>
+                    <Col lg="4">
                         <div className={cx('header-page')}>
                             <h1>Summarize</h1>
                         </div>
                         <div className={cx('Summarize-detail')}>
                             <p>
                                 Initial fee:
-                                <span>12$</span>
+                                <span>{totalPriceAll}$</span>
                             </p>
                             <p>
                                 Transport fee:
@@ -182,7 +131,7 @@ const CartPage = () => {
                             <div className={cx('total')}>
                                 <p>
                                     Total fee:
-                                    <span>12$</span>
+                                    <span>{totalPriceAll}$</span>
                                 </p>
                             </div>
                         </div>
@@ -195,9 +144,9 @@ const CartPage = () => {
                                 Safe payment
                             </div>
                         </div>
-                    </div>
-                </div>
-            </div>
+                    </Col>
+                </Row>
+            </Container>
         </div>
     );
 };

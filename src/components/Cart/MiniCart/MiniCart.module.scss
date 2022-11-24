@@ -7,10 +7,14 @@
     .wrap-item {
         max-height: 400px;
         overflow-y: auto;
+
+        h2 {
+            color: red;
+            border-bottom: 1px solid var(--border-color);
+        }
     }
 
     .header {
-        font-size: 2rem;
         font-weight: 600;
     }
 
@@ -25,6 +29,7 @@
             height: 100%;
             flex: 2 1;
             max-width: 110px;
+            border-radius: 8px;
         }
 
         .info {
@@ -52,15 +57,20 @@
                 display: inline-block;
                 display: flex;
                 align-items: center;
+                flex: 1;
 
                 .amount {
                     margin: 0 4px;
                     align-items: center;
+                    width: 20px;
+                    text-align: center;
                 }
 
                 .icon {
-                    padding: 2px;
+                    padding: 8px;
                     cursor: pointer;
+
+                    border-radius: 100px;
                 }
             }
         }

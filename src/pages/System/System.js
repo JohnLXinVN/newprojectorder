@@ -1,5 +1,6 @@
 import classNames from 'classnames/bind';
 import { useEffect } from 'react';
+import { Container, Row } from 'reactstrap';
 import Direction from '~/components/Direction';
 
 import styles from './System.module.scss';
@@ -22,12 +23,12 @@ function System() {
     return (
         <div className={cx('wrapper')}>
             <Direction title="System" />
-            <div className="container">
-                <div className="row">
+            <Container>
+                <Row>
                     <div className={cx('header-page')}>
                         <h1>System</h1>
                     </div>
-                </div>
+                </Row>
                 <div className={cx('content')}>
                     <h2 className={cx('des')}>
                         COCOO STORE SYSTEM - CON DAO COCONUT CREAM
@@ -355,7 +356,7 @@ function System() {
                         </li>
                     </ul>
                 </div>
-            </div>
+            </Container>
         </div>
     );
 }

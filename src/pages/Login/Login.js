@@ -1,5 +1,6 @@
 import classNames from 'classnames/bind';
 import { useEffect } from 'react';
+import { Col, Container, Row } from 'reactstrap';
 import images from '~/assets/images';
 import Button from '~/components/Button';
 import Direction from '~/components/Direction';
@@ -26,13 +27,13 @@ function Login() {
     return (
         <div className={cx('wrapper')}>
             <Direction title="Login" />
-            <div className="container">
+            <Container>
                 <div className={cx('header-page')}>
                     <h1>Login</h1>
                 </div>
                 <div className={cx('content-page')}>
-                    <div className="row">
-                        <div className="col-6">
+                    <Row>
+                        <Col lg="6">
                             <p>If you have an account, please login here</p>
                             <form action="" className={cx('form-action')}>
                                 <div className={cx('item')}>
@@ -80,8 +81,8 @@ function Login() {
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div className="col-6">
+                        </Col>
+                        <Col lg="6">
                             <p>
                                 You forget your password? Import your email to recover
                                 your password by email
@@ -100,10 +101,10 @@ function Login() {
                                     Recover password
                                 </Button>
                             </form>
-                        </div>
-                    </div>
+                        </Col>
+                    </Row>
                 </div>
-            </div>
+            </Container>
         </div>
     );
 }
