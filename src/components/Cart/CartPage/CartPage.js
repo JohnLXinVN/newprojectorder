@@ -7,7 +7,7 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import classNames from 'classnames/bind';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Col, Container, Row } from 'reactstrap';
 import images from '~/assets/images';
@@ -25,6 +25,18 @@ const CartPage = () => {
     const totalAmountAll = useSelector((state) => state.cart.totalAmountAll);
     const totalPriceAll = useSelector((state) => state.cart.totalPriceAll);
     const dispatch = useDispatch();
+    const scrollToTop = () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth',
+            /* you can also use 'auto' behaviour
+             in place of 'smooth' */
+        });
+    };
+
+    useEffect(() => {
+        scrollToTop();
+    }, []);
 
     return (
         <div className={cx('wrapper')}>

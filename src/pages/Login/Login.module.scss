@@ -1,6 +1,6 @@
 .header-page {
     padding: 28px 0 0 0;
-    border-bottom: 2px thin var(--border-color);
+    border-bottom: 2px solid var(--border-color);
 
     &:hover {
         color: var(--primary-color);
@@ -33,6 +33,9 @@
             border: 1px solid #eae7e7;
             width: 100%;
             font-size: 1.6rem;
+            align-items: center;
+            display: flex;
+            justify-content: center;
 
             &:focus-within {
                 border-color: #ccc;

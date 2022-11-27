@@ -13,6 +13,10 @@ const routes = {
     contact: '/contact',
     cart: '/cart',
     checkout: '/checkout',
+    shoppingGuide: '/shopping-guide',
+    paymentGuide: '/payment-guide',
+    deliveryGuide: '/delivery-guide',
+    termsOfService: '/terms-of-service',
 };
 
 export default routes;

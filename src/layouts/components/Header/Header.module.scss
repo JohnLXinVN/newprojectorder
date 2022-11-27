@@ -2,7 +2,7 @@
     position: fixed;
     width: 100%;
     top: 0;
-    z-index: 1000;
+    z-index: 999;
 }
 
 .top-bar {
@@ -73,6 +73,7 @@
             border-radius: 10px;
             border: 1px solid #f1f1f1;
             position: relative;
+            background-color: var(--white-color);
 
             &:focus-within {
                 border-color: var(--border-color);
@@ -219,6 +220,17 @@
             color: var(--white-color);
             top: 3px;
             right: 0;
+        }
+    }
+}
+
+//Responsive
+
+@media only scream and (min-width: 992px) {
+    .top-bar-left {
+        .phone,
+        .hlelp {
+            display: none;
         }
     }
 }

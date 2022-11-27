@@ -1,0 +1,198 @@
+.wrap-info {
+    .img {
+        width: 100%;
+
+        img {
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+
+    .info {
+        .title {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-top: 8px;
+        }
+
+        .price {
+            margin-top: 18px;
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        .stars {
+            padding: 12px 0;
+            border-top: 1px solid var(--gray-color);
+            border-bottom: 1px solid var(--gray-color);
+
+            .icon-star {
+                color: var(--gray-color);
+                margin-right: 6px;
+                cursor: pointer;
+
+                &.active {
+                    color: var(--star-color);
+                }
+            }
+        }
+        .form-product {
+            padding: 12px 0;
+
+            .wrap-add-cart {
+                display: flex;
+
+                .custom {
+                    display: flex;
+                    justify-content: space-between;
+                    padding: 8px;
+                    align-items: center;
+                    border: 1px solid rgb(222, 219, 219);
+
+                    .amount-number {
+                        width: 12px;
+                        margin-left: 12px;
+                    }
+
+                    .wrap-icon {
+                        margin-left: 24px;
+                        display: flex;
+                        flex-direction: column;
+
+                        .icon {
+                            cursor: pointer;
+                        }
+                    }
+                }
+
+                .btn-buy {
+                    margin-left: 32px;
+                }
+            }
+
+            .des {
+                margin-top: 32px;
+
+                .text-des {
+                    margin-top: 8px;
+                    font-weight: 300;
+                    font-size: 1.6rem;
+                    color: #898989;
+                }
+            }
+        }
+    }
+}
+
+.selection {
+    margin-top: 48px;
+
+    .wrap-link {
+        display: flex;
+
+        .tab-link {
+            padding: 15px 40px;
+            color: #818181;
+            font-size: 2rem;
+            cursor: pointer;
+            margin-bottom: 12px;
+
+            &.active {
+                background-color: var(--primary-color);
+                color: var(--white-color);
+            }
+        }
+    }
+
+    .tab-content-des {
+        color: #898989;
+        font-weight: 400;
+        font-size: 1.6rem;
+    }
+
+    .tab-content-custom {
+        color: #898989;
+        font-weight: 400;
+        font-size: 1.6rem;
+    }
+
+    .tab-content-evaluate {
+        width: 100%;
+        padding: 25px 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background-color: #f2f8ea;
+        color: #212b35;
+        border: 1px solid rgb(216, 213, 213);
+        margin-bottom: 16px;
+
+        p {
+            font-weight: 200;
+            font-size: 1.4rem;
+        }
+
+        .btn-send-evaluate {
+            padding: 10px 20px;
+            background-color: var(--green-color);
+            cursor: pointer;
+            color: var(--white-color);
+            border-radius: 3px;
+            margin-top: 12px;
+        }
+    }
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1000;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .inner {
+        min-width: 700px;
+        background-color: var(--white-color);
+        color: var(--text-color);
+        padding: 20px 40px;
+        position: relative;
+
+        .text-info {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            h3 {
+                font-size: 2rem;
+                color: var(--gray-color);
+            }
+            h1 {
+                font-weight: 800;
+            }
+        }
+
+        .btn-send {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 24px;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 8px;
+            right: 12px;
+            font-size: 2.5rem;
+            padding: 8px;
+            cursor: pointer;
+        }
+    }
+}

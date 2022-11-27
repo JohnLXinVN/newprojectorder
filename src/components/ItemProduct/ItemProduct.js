@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import config from '~/config';
 import { CartActions } from '../Redux/feature/cart/CartSlice';
 
 import styles from './ItemProduct.module.scss';
@@ -29,7 +30,7 @@ function ItemProduct({ item }) {
 
     return (
         <>
-            <Link className={cx('wrap-item')}>
+            <Link className={cx('wrap-item')} to={`/foods/${item.idLink}`}>
                 <div className={cx('img')}>
                     <img src={item.img} alt="" />
 

@@ -1,9 +1,15 @@
+import { faCircleExclamation } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import classNames from 'classnames/bind';
+import { Form, Formik, useFormik } from 'formik';
 import { useEffect } from 'react';
 import { Col, Container, Row } from 'reactstrap';
+import * as Yup from 'yup';
+
 import images from '~/assets/images';
 import Button from '~/components/Button';
 import Direction from '~/components/Direction';
+import TextField from '~/components/TextField';
 import config from '~/config';
 
 import styles from './Login.module.scss';
@@ -35,41 +41,54 @@ function Login() {
                     <Row>
                         <Col lg="6">
                             <p>If you have an account, please login here</p>
-                            <form action="" className={cx('form-action')}>
-                                <div className={cx('item')}>
-                                    <div className={cx('title-item')}>
-                                        Email <span>*</span>
+                            <Formik
+                                initialValues={{
+                                    email: '',
+                                    password: '',
+                                }}
+                                validationSchema={Yup.object({
+                                    email: Yup.string()
+                                        .email('Email is invalid')
+                                        .required('Email is required'),
+                                    password: Yup.string()
+                                        .min(
+                                            6,
+                                            'Your password must be at least 6 characters long',
+                                        )
+                                        .required('Password is required'),
+                                })}
+                            >
+                                {(formik) => (
+                                    <div>
+                                        <Form className={cx('form-action')}>
+                                            <TextField
+                                                label="Email"
+                                                name="email"
+                                                type="email"
+                                                placeholder="Import your email address"
+                                            />
+                                            <TextField
+                                                label="Password"
+                                                name="password"
+                                                type="password"
+                                                placeholder="Import your password"
+                                            />
+                                            <Button
+                                                className={cx('btn')}
+                                                value="Submit form"
+                                                primary
+                                                type="submit"
+                                                borderRadius
+                                            >
+                                                Login
+                                            </Button>
+                                            <Button outline to={config.routes.register}>
+                                                Register
+                                            </Button>
+                                        </Form>
                                     </div>
-                                    <input
-                                        type="email"
-                                        name=""
-                                        id=""
-                                        placeholder="Email"
-                                    />
-                                </div>
-                                <div className={cx('item')}>
-                                    <div className={cx('title-item')}>
-                                        Password <span>*</span>
-                                    </div>
-                                    <input
-                                        type="password"
-                                        name=""
-                                        id=""
-                                        placeholder="Password"
-                                    />
-                                </div>
-                                <Button
-                                    className={cx('btn')}
-                                    primary
-                                    type="submit"
-                                    borderRadius
-                                >
-                                    Login
-                                </Button>
-                                <Button outline to={config.routes.register}>
-                                    Register
-                                </Button>
-                            </form>
+                                )}
+                            </Formik>
                             <div className={cx('another-choice')}>
                                 <p>Or login by </p>
                                 <div className={cx('list-item')}>
@@ -87,20 +106,39 @@ function Login() {
                                 You forget your password? Import your email to recover
                                 your password by email
                             </p>
-                            <form action="" className={cx('form-action')}>
-                                <div className={cx('title-item')}>
-                                    Email <span>*</span>
-                                </div>
-                                <input type="email" name="" id="" placeholder="Email" />
-                                <Button
-                                    className={cx('btn')}
-                                    primary
-                                    type="submit"
-                                    borderRadius
-                                >
-                                    Recover password
-                                </Button>
-                            </form>
+
+                            <Formik
+                                initialValues={{
+                                    email: '',
+                                }}
+                                validationSchema={Yup.object({
+                                    email: Yup.string()
+                                        .email('Email is invalid')
+                                        .required('Email is required'),
+                                })}
+                            >
+                                {(formik) => (
+                                    <div>
+                                        <Form className={cx('form-action')}>
+                                            <TextField
+                                                label="Email"
+                                                name="email"
+                                                type="email"
+                                                placeholder="Import your email address"
+                                            />
+
+                                            <Button
+                                                className={cx('btn')}
+                                                primary
+                                                type="submit"
+                                                borderRadius
+                                            >
+                                                Recover password
+                                            </Button>
+                                        </Form>
+                                    </div>
+                                )}
+                            </Formik>
                         </Col>
                     </Row>
                 </div>

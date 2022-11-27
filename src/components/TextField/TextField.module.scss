@@ -1,0 +1,56 @@
+.form-group {
+    margin-bottom: 12px;
+    position: relative;
+
+    .is-invalid {
+        border-color: red !important;
+    }
+}
+
+.title-item {
+    font-size: 2rem;
+    font-weight: 600;
+    margin: 12px 0 2px 0;
+
+    span {
+        color: red;
+    }
+}
+
+.textarea {
+    padding: 10px 8px;
+    border: 1px solid #eae7e7 !important;
+    width: 100%;
+    font-size: 1.6rem;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+
+    &:focus {
+        outline: none;
+    }
+
+    &:focus-within {
+        border-color: #ccc;
+    }
+}
+
+.input {
+    padding: 10px 8px;
+    border: 1px solid #eae7e7 !important;
+    width: 100%;
+    font-size: 1.6rem;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+
+    &:focus-within {
+        border-color: #ccc;
+    }
+}
+
+.error-mes {
+    position: absolute;
+    color: red;
+    font-size: 1.4rem;
+}

@@ -1,8 +1,11 @@
 import classNames from 'classnames/bind';
+import { Formik, Form, yupToFormErrors } from 'formik';
+import * as Yup from 'yup';
 import { Col, Container, Row } from 'reactstrap';
 import images from '~/assets/images';
 import Button from '~/components/Button';
 import Direction from '~/components/Direction';
+import TextField from '~/components/TextField';
 
 import styles from './Register.module.scss';
 
@@ -18,55 +21,108 @@ function Register() {
                 </div>
                 <div className={cx('content-page')}>
                     <p>If you don't have an account, please register here</p>
-                    <form action="" className={cx('wrap-form')}>
-                        <Row>
-                            <Col lg="6">
-                                <div className={cx('item')}>
-                                    <div className={cx('title-item')}>
-                                        Surname <span>*</span>
-                                    </div>
-                                    <input type="text" />
-                                </div>
-                            </Col>
-                            <Col lg="6">
-                                <div className={cx('item')}>
-                                    <div className={cx('title-item')}>
-                                        Name <span>*</span>
-                                    </div>
-                                    <input type="text" />
-                                </div>
-                            </Col>
-                            <Col lg="6">
-                                <div className={cx('item')}>
-                                    <div className={cx('title-item')}>
-                                        Email <span>*</span>
-                                    </div>
-                                    <input type="email" />
-                                </div>
-                            </Col>
-                            <Col lg="6">
-                                <div className={cx('item')}>
-                                    <div className={cx('title-item')}>
-                                        Phone number <span>*</span>
-                                    </div>
-                                    <input type="tel" />
-                                </div>
-                            </Col>
-                        </Row>
-                        <Row>
-                            <Col lg="12">
-                                <div className={cx('item')}>
-                                    <div className={cx('title-item')}>
-                                        Password <span>*</span>
-                                    </div>
-                                    <input type="password" />
-                                </div>
-                            </Col>
-                        </Row>
-                        <Button primary borderRadius className={cx('btn')}>
-                            Register
-                        </Button>
-                    </form>
+                    <Formik
+                        initialValues={{
+                            surname: '',
+                            name: '',
+                            email: '',
+                            phoneNumber: '',
+                            password: '',
+                            confirmPassword: '',
+                        }}
+                        validationSchema={Yup.object({
+                            surname: Yup.string()
+                                .min(6, 'Your surname must be at least 6 characters long')
+                                .max(20, 'Must be 20 or less')
+                                .required('Surname is required'),
+                            name: Yup.string()
+                                .min(6, 'Your name must be at least 6 characters long')
+                                .max(20, 'Must be 20 or less')
+
+                                .required('Name is required'),
+                            email: Yup.string()
+                                .email('Email is invalid')
+                                .required('Email is required'),
+                            phoneNumber: Yup.string().required(
+                                'Your phone number is required',
+                            ),
+                            password: Yup.string()
+                                .min(6, 'Password must be at least 6 characters')
+                                .required('Password is required'),
+                            confirmPassword: Yup.string()
+                                .oneOf([Yup.ref('password'), null], 'Password must match')
+                                .required('Confirm Password is required'),
+                        })}
+                    >
+                        {(formik) => (
+                            <div>
+                                <Form className={cx('form-action')}>
+                                    <Row>
+                                        <Col lg="6">
+                                            <TextField
+                                                label="Surname"
+                                                name="surname"
+                                                type="text"
+                                                placeholder="Import your surname"
+                                            />
+                                        </Col>
+                                        <Col lg="6">
+                                            <TextField
+                                                label="Name"
+                                                name="name"
+                                                type="text"
+                                                placeholder="Import your Name"
+                                            />
+                                        </Col>
+                                        <Col lg="6">
+                                            <TextField
+                                                label="Email"
+                                                name="email"
+                                                type="email"
+                                                placeholder="Import your Email"
+                                            />
+                                        </Col>
+                                        <Col lg="6">
+                                            <TextField
+                                                label="Phone number"
+                                                name="phoneNumber"
+                                                type="tel"
+                                                placeholder="Import your Phone number"
+                                            />
+                                        </Col>
+                                    </Row>
+                                    <Row>
+                                        <Col lg="12">
+                                            <TextField
+                                                label="Password"
+                                                name="password"
+                                                type="password"
+                                                placeholder="Import your Password"
+                                            />
+                                        </Col>
+                                    </Row>
+                                    <Row>
+                                        <Col lg="12">
+                                            <TextField
+                                                label="Confirm Password"
+                                                name="confirmPassword"
+                                                type="password"
+                                                placeholder="Import your Password"
+                                            />
+                                        </Col>
+                                    </Row>
+                                    <Button
+                                        primary
+                                        borderRadius
+                                        className={cx('btn')}
+                                        type="submit"
+                                    >
+                                        Register
+                                    </Button>
+                                </Form>
+                            </div>
+                        )}
+                    </Formik>
                 </div>
                 <div className={cx('another-choice')}>
                     <p>Or login by </p>

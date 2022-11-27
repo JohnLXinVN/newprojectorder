@@ -11,6 +11,8 @@
     --border-color: #e1e1e1;
     --light-primary-color: #02d0c8;
     --gray-color: rgb(198, 196, 196);
+    --star-color: #ffce3e;
+    --green-color: #80bb35;
 
     --gutter: 24px;
     --container-width: 1240px;
@@ -40,6 +42,7 @@ body {
     text-rendering: optimizespeed;
     color: var(--text-color);
     overflow-y: overlay;
+    position: relative;
 }
 
 button,

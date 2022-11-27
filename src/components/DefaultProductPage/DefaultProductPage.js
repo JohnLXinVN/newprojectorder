@@ -1,6 +1,7 @@
 import classNames from 'classnames/bind';
 import { Link } from 'react-router-dom';
 import { Col, Container, Row } from 'reactstrap';
+import config from '~/config';
 import Direction from '../Direction';
 import ItemProduct from '../ItemProduct';
 
@@ -21,10 +22,28 @@ function DefaultProductPage({ product, productName }) {
                                 <div className={cx('wrap-guide')}>
                                     <h3>Guide</h3>
                                     <div className={cx('lists')}>
-                                        <Link className={cx('item')}>Shopping guide</Link>
-                                        <Link className={cx('item')}>Payment Guide</Link>
-                                        <Link className={cx('item')}>Delivery guide</Link>
-                                        <Link className={cx('item')}>
+                                        <Link
+                                            className={cx('item')}
+                                            to={config.routes.shoppingGuide}
+                                        >
+                                            Shopping guide
+                                        </Link>
+                                        <Link
+                                            className={cx('item')}
+                                            to={config.routes.paymentGuide}
+                                        >
+                                            Payment Guide
+                                        </Link>
+                                        <Link
+                                            className={cx('item')}
+                                            to={config.routes.deliveryGuide}
+                                        >
+                                            Delivery guide
+                                        </Link>
+                                        <Link
+                                            className={cx('item')}
+                                            to={config.routes.termsOfService}
+                                        >
                                             Terms of Service
                                         </Link>
                                     </div>
