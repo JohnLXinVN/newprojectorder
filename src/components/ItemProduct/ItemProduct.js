@@ -13,7 +13,7 @@ const cx = classNames.bind(styles);
 function ItemProduct({ item }) {
     const dispatch = useDispatch();
 
-    const handleAdd = () => {
+    const handleAdd = (e) => {
         dispatch(CartActions.addItem(item));
 
         toast.success('You have successfully added the product to your cart', {

@@ -42,7 +42,7 @@ function Contact() {
                 </div>
                 <div className={cx('content-page')}>
                     <Row>
-                        <Col lg="9">
+                        <Col lg="9" md="9">
                             <div className={cx('box-map')}>
                                 <iframe
                                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.473021696869!2d105.84830581424502!3d21.013751093667885!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ab98d8a3ce0b%3A0x1f0e4d74b56853e3!2zQ29jb28gLSBLZW0gROG7q2EgQ8O0biDEkOG6o28gKCBjxqEgc-G7nyAxICk!5e0!3m2!1sen!2s!4v1620706641668!5m2!1sen!2s"
@@ -54,7 +54,7 @@ function Contact() {
                                 />
                             </div>
                         </Col>
-                        <Col lg="3">
+                        <Col lg="3" md="3">
                             <div className={cx('wrap-info')}>
                                 <Link className={cx('logo')} to={config.routes.home}>
                                     <img src={images.logo} alt="" />
@@ -119,7 +119,7 @@ function Contact() {
                         </Col>
                     </Row>
                     <Row>
-                        <Col lg="9">
+                        <Col xl="9" lg="12">
                             <form className={cx('form-select')} action="">
                                 <div className={cx('form-group')}>
                                     <label htmlFor="">

@@ -91,3 +91,21 @@
         color: #ffdc02;
     }
 }
+
+@media screen and (max-width: 768px) {
+    .phone-number {
+        display: none !important;
+    }
+
+    .link-phone {
+        padding: 12px 12px !important;
+        font-size: 2.2rem !important;
+        border-radius: 70px !important;
+    }
+
+    .link-phone {
+        .icon {
+            margin: 0 !important;
+        }
+    }
+}

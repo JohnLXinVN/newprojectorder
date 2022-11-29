@@ -16,7 +16,7 @@ function DefaultProductPage({ product, productName }) {
             <Container>
                 <div className={cx('content-page')}>
                     <Row>
-                        <Col lg="2">
+                        <Col xl="2">
                             <div className={cx('menu')}>
                                 <h3 className={cx('title-header')}>Category</h3>
                                 <div className={cx('wrap-guide')}>
@@ -50,7 +50,7 @@ function DefaultProductPage({ product, productName }) {
                                 </div>
                             </div>
                         </Col>
-                        <Col lg="10">
+                        <Col xl="10">
                             <div className={cx('main-container')}>
                                 <div className={cx('header')}>
                                     <h3 className={cx('title-header')}>{productName}</h3>
@@ -59,7 +59,11 @@ function DefaultProductPage({ product, productName }) {
                                         <Row>
                                             {product.map((item) => (
                                                 <Col
-                                                    lg="3"
+                                                    xl="3"
+                                                    lg="4"
+                                                    md="4"
+                                                    sm="6"
+                                                    xs="6"
                                                     key={item.id}
                                                     className="mb-4"
                                                 >

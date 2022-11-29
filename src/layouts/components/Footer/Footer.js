@@ -30,11 +30,11 @@ function Footer() {
             <div className={cx('selection-brand')}>
                 <Container>
                     <div className={cx('wrap-brand')}>
-                        <div className={cx('img-brand')}>
+                        <div className={cx('img-brand', 'imgbrand3')}>
                             <img src={images.imgBrand3} alt="" />
                         </div>
 
-                        <div className={cx('img-brand')}>
+                        <div className={cx('img-brand', 'imgbrand4')}>
                             <img src={images.imgBrand4} alt="" />
                         </div>
                         <div className={cx('img-brand')}>
@@ -43,7 +43,7 @@ function Footer() {
                         <div className={cx('img-brand')}>
                             <img src={images.imgBrand6} alt="" />
                         </div>
-                        <div className={cx('img-brand')}>
+                        <div className={cx('img-brand', 'imgbrand7')}>
                             <img src={images.imgBrand7} alt="" />
                         </div>
                     </div>
@@ -52,9 +52,11 @@ function Footer() {
             <div className={cx('footer-top')}>
                 <Container>
                     <Row>
-                        <Col lg="8">
+                        <Col lg="8" md="12" sm="12">
                             <div className={cx('wrap-contact')}>
-                                <h5>Send email</h5>
+                                <div className={cx('text')}>
+                                    <h5>Send email</h5>
+                                </div>
                                 <form action="" className={cx('form-email')}>
                                     <input
                                         className={cx('input')}
@@ -69,7 +71,7 @@ function Footer() {
                                 </form>
                             </div>
                         </Col>
-                        <Col lg="4">
+                        <Col lg="4" md="12" sm="12">
                             <ul className={cx('social-items')}>
                                 <li className={cx('icon')}>
                                     <FontAwesomeIcon icon={faTwitter} />

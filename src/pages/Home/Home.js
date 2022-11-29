@@ -1,19 +1,19 @@
 import classNames from 'classnames/bind';
+import { Autoplay, Navigation, Pagination } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay, Pagination, Navigation } from 'swiper';
-
-import 'swiper/css';
-import 'swiper/css/pagination';
-import 'swiper/css/navigation';
-
-import styles from './Home.module.scss';
-import images from '~/assets/images';
-import ItemProduct from '~/components/ItemProduct';
-import video from '~/assets/video';
-import ProductItems from '~/components/ListProductItems';
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
+
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+
+import images from '~/assets/images';
+import video from '~/assets/video';
+import ItemProduct from '~/components/ItemProduct';
+import ProductItems from '~/components/ListProductItems';
 import config from '~/config';
+import styles from './Home.module.scss';
 
 import { Col, Container, Row } from 'reactstrap';
 
@@ -75,14 +75,14 @@ function Home() {
             <div className={cx('banner2')}>
                 <Container>
                     <Row>
-                        <Col lg="6">
+                        <Col lg="6" md="6" className="mb-4">
                             <img
                                 className={cx('img-banner2')}
                                 src={images.homeImg3}
                                 alt=""
                             />
                         </Col>
-                        <Col lg="6">
+                        <Col lg="6" md="6" className="mb-4">
                             <img
                                 className={cx('img-banner2')}
                                 src={images.homeImg4}
@@ -168,7 +168,14 @@ function Home() {
                 <Container>
                     <Row>
                         {popularProductsItems.map((item) => (
-                            <Col lg="3" key={item.id} className="mb-4">
+                            <Col
+                                lg="3"
+                                md="4"
+                                sm="6"
+                                xs="6"
+                                key={item.id}
+                                className="mb-4"
+                            >
                                 <ItemProduct item={item} />
                             </Col>
                         ))}
@@ -178,7 +185,7 @@ function Home() {
             <div className={cx('best-selling-product')}>
                 <Container>
                     <Row>
-                        <Col lg="2">
+                        <Col lg="2" md="2">
                             <div className={cx('category')}>
                                 <h1 className={cx('heading')}>Category</h1>
                                 <div className={cx('list-category')}>
@@ -245,12 +252,19 @@ function Home() {
                                 </div>
                             </div>
                         </Col>
-                        <Col lg="10">
+                        <Col lg="10" md="10">
                             <h1 className={cx('header')}>Best Selling Product</h1>
                             <div className={cx('list-best-selling-product')}>
                                 <Row>
                                     {bestSellingProductItems.map((item) => (
-                                        <Col lg="3" key={item.id} className="mb-4">
+                                        <Col
+                                            xs="6"
+                                            lg="3"
+                                            md="3"
+                                            sm="6"
+                                            key={item.id}
+                                            className="mb-4"
+                                        >
                                             <ItemProduct item={item} />
                                         </Col>
                                     ))}

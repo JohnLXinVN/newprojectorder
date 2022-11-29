@@ -190,3 +190,24 @@
         }
     }
 }
+
+//Responsive
+
+@media screen and (min-width: 768px) and (max-width: 992px) {
+}
+
+@media screen and (max-width: 767px) {
+    .category {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .store-address {
+        display: none;
+    }
+
+    .wrap-about-us {
+        flex-direction: column;
+    }
+}
