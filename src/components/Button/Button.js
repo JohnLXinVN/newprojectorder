@@ -62,7 +62,7 @@ function Button({
     });
 
     return (
-        <Comp type={type} className={classes} {...props}>
+        <Comp type={type} className={classes} {...props} disable>
             {leftIcon && <span className={cx('icon')}>{leftIcon}</span>}
             <span className={cx('title')}>{children}</span>
             {rightIcon && <span className={cx('icon')}>{rightIcon}</span>}

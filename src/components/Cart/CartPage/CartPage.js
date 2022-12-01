@@ -14,6 +14,7 @@ import images from '~/assets/images';
 import Button from '~/components/Button';
 import Direction from '~/components/Direction';
 import { CartActions } from '~/components/Redux/feature/cart/CartSlice';
+import config from '~/config';
 
 import styles from './CartPage.module.scss';
 
@@ -158,9 +159,25 @@ const CartPage = () => {
                             </div>
                         </div>
                         <div className={cx('check-out')}>
-                            <Button className={cx('btn-checkout')} borderRadius>
-                                Check out
-                            </Button>
+                            {totalAmountAll === 0 ? (
+                                <Button
+                                    className={cx('btn-checkout')}
+                                    borderRadius
+                                    to={config.routes.checkout}
+                                    disable
+                                >
+                                    Check out
+                                </Button>
+                            ) : (
+                                <Button
+                                    className={cx('btn-checkout')}
+                                    borderRadius
+                                    to={config.routes.checkout}
+                                >
+                                    Check out
+                                </Button>
+                            )}
+
                             <div className={cx('safe-payment')}>
                                 <FontAwesomeIcon icon={faLock} />
                                 Safe payment

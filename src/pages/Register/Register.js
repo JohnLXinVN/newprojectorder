@@ -8,10 +8,23 @@ import Direction from '~/components/Direction';
 import TextField from '~/components/TextField';
 
 import styles from './Register.module.scss';
+import { useEffect } from 'react';
 
 const cx = classNames.bind(styles);
 
 function Register() {
+    const scrollToTop = () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth',
+            /* you can also use 'auto' behaviour
+             in place of 'smooth' */
+        });
+    };
+
+    useEffect(() => {
+        scrollToTop();
+    }, []);
     return (
         <div className={cx('wrapper')}>
             <Direction title="Register" />

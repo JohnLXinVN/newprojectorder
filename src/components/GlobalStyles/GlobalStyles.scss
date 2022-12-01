@@ -11,6 +11,7 @@
     --gray-color: rgb(198, 196, 196);
     --star-color: #ffce3e;
     --green-color: #80bb35;
+    --checkout-primary-color: #2a9dcc;
 
     --gutter: 24px;
     --container-width: 1240px;
@@ -25,6 +26,10 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+p {
+    margin-bottom: 0;
 }
 
 html,

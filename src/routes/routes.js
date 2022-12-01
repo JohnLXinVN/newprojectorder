@@ -1,6 +1,7 @@
 import CartPage from '~/components/Cart/CartPage';
 import FoodDetail from '~/components/FoodDetail';
 import config from '~/config';
+import { OnlyContentLayout } from '~/layouts';
 import CheckoutPage from '~/pages/CheckoutPage';
 import CoconutCream from '~/pages/CoconutCream';
 import Contact from '~/pages/Contact';
@@ -33,7 +34,7 @@ const publicRoutes = [
     { path: config.routes.system, component: System },
     { path: config.routes.contact, component: Contact },
     { path: config.routes.cart, component: CartPage },
-    { path: config.routes.checkout, component: CheckoutPage },
+    { path: config.routes.checkout, component: CheckoutPage, layout: OnlyContentLayout },
     { path: config.routes.shoppingGuide, component: ShoppingGuide },
     { path: config.routes.paymentGuide, component: PaymentGuide },
     { path: config.routes.deliveryGuide, component: DeliveryGuide },

@@ -1,9 +1,9 @@
 import classNames from 'classnames/bind';
+import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import config from '~/config';
 import { CartActions } from '../Redux/feature/cart/CartSlice';
 
 import styles from './ItemProduct.module.scss';
@@ -14,6 +14,7 @@ function ItemProduct({ item }) {
     const dispatch = useDispatch();
 
     const handleAdd = (e) => {
+        e.preventDefault();
         dispatch(CartActions.addItem(item));
 
         toast.success('You have successfully added the product to your cart', {
@@ -27,6 +28,17 @@ function ItemProduct({ item }) {
             theme: 'colored',
         });
     };
+    const scrollToTop = () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth',
+            /* you can also use 'auto' behaviour
+             in place of 'smooth' */
+        });
+    };
+    useEffect(() => {
+        scrollToTop();
+    }, []);
 
     return (
         <>

@@ -9,7 +9,7 @@ import {
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import classNames from 'classnames/bind';
 import { Form, Formik } from 'formik';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import * as Yup from 'yup';
 import { Col, Container, Row } from 'reactstrap';
@@ -31,7 +31,22 @@ const FoodDetail = () => {
     const item = ListProductItems.find((item) => item.idLink === idLink);
     const [tab, setTab] = useState('des');
     const [modal, setModal] = useState(false);
-    const [quantity, setQuantity] = useState(item.quantity);
+
+    const handleDefault = (e) => {
+        e.stopPropagation();
+    };
+
+    const scrollToTop = () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth',
+            /* you can also use 'auto' behaviour
+             in place of 'smooth' */
+        });
+    };
+    useEffect(() => {
+        scrollToTop();
+    }, []);
 
     return (
         <div className={cx('wrapper')}>
@@ -71,29 +86,7 @@ const FoodDetail = () => {
                                     />
                                 </div>
                                 <div className={cx('form-product')}>
-                                    <h2>Amount:</h2>
                                     <div className={cx('wrap-add-cart')}>
-                                        <div className={cx('custom')}>
-                                            <div className={cx('amount-number')}>
-                                                {quantity}
-                                            </div>
-                                            <div className={cx('wrap-icon')}>
-                                                <FontAwesomeIcon
-                                                    className={cx('icon')}
-                                                    icon={faCaretUp}
-                                                    onClick={() =>
-                                                        setQuantity(quantity + 1)
-                                                    }
-                                                />
-                                                <FontAwesomeIcon
-                                                    className={cx('icon')}
-                                                    icon={faCaretDown}
-                                                    onClick={() =>
-                                                        setQuantity(quantity - 1)
-                                                    }
-                                                />
-                                            </div>
-                                        </div>
                                         <Button
                                             primary
                                             borderRadius
@@ -164,8 +157,8 @@ const FoodDetail = () => {
                 </div>
             </Container>
             {modal && (
-                <div className={cx('modal')}>
-                    <div className={cx('inner')}>
+                <div className={cx('modal')} onClick={() => setModal(!modal)}>
+                    <div className={cx('inner')} onClick={handleDefault}>
                         <div className={cx('text-info')}>
                             <h3>Evaluate product</h3>
                             <h1>{item.title}</h1>

@@ -271,7 +271,10 @@ function Header() {
                     </div>
                 </div>
                 {showLists && (
-                    <div className={cx('list-items')}>
+                    <div
+                        className={cx('list-items')}
+                        onClick={() => dispatch(showListsActions.setShow())}
+                    >
                         <Link className={cx('item')} to={config.routes.introduce}>
                             Introduce
                         </Link>

@@ -128,6 +128,9 @@
         background-color: var(--black-color);
         color: var(--white-color);
         width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
 
         &:hover {
             background-color: rgb(146, 144, 144);

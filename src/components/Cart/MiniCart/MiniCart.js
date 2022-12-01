@@ -78,13 +78,24 @@ const MiniCart = () => {
                     <Button primary borderRadius to={config.routes.cart}>
                         To cart
                     </Button>
-                    <Button
-                        className={cx('btn-checkout')}
-                        borderRadius
-                        to={config.routes.checkout}
-                    >
-                        Check out
-                    </Button>
+                    {totalAmountAll === 0 ? (
+                        <Button
+                            className={cx('btn-checkout')}
+                            borderRadius
+                            to={config.routes.checkout}
+                            disable
+                        >
+                            Check out
+                        </Button>
+                    ) : (
+                        <Button
+                            className={cx('btn-checkout')}
+                            borderRadius
+                            to={config.routes.checkout}
+                        >
+                            Check out
+                        </Button>
+                    )}
                 </div>
             </div>
         </div>
