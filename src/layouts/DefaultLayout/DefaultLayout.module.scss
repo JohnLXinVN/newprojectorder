@@ -1,3 +1,7 @@
+.wrapper {
+    position: relative;
+}
+
 .content {
     &.active-show-list {
         margin-top: calc(var(--bottom-bar-height-small) + var(--top-bar-height));
