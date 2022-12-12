@@ -3,7 +3,15 @@
 }
 
 .content {
-    &.active-show-list {
-        margin-top: calc(var(--bottom-bar-height-small) + var(--top-bar-height));
+    margin-top: var(--header-height);
+}
+
+@media screen and (max-width: 992px) {
+    .content {
+        margin-top: var(--header-height-small);
+
+        &.active-show-list {
+            margin-top: calc(var(--height-menu-bar) + var(--header-height-small));
+        }
     }
 }

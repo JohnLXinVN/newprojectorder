@@ -1,7 +1,9 @@
 .wrapper {
-    position: sticky;
+    position: fixed;
     position: -webkit-sticky; /* Safari */
     top: 0;
+    left: 0;
+    right: 0;
     height: var(--header-height);
     z-index: 999;
 }
