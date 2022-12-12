@@ -10,7 +10,6 @@ import classNames from 'classnames/bind';
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Col, Container, Row } from 'reactstrap';
-import images from '~/assets/images';
 import Button from '~/components/Button';
 import Direction from '~/components/Direction';
 import { CartActions } from '~/components/Redux/feature/cart/CartSlice';
